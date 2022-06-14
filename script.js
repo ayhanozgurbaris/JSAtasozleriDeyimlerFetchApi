@@ -18,12 +18,12 @@ async function loadResults(){
         proverbs.push(element.sozum);
     });
     
-    const birlesmisKelimeler = [...new Set(keywords)];
-    console.log(birlesmisKelimeler);
+    const unitedWords = [...new Set(keywords)];
+    console.log(unitedWords);
 
-    birlesmisKelimeler.sort(() => Math.random() -0.5)
+    unitedWords.sort(() => Math.random() -0.5)
     let counter = 0;
-    birlesmisKelimeler.forEach(element => {
+    unitedWords.forEach(element => {
         if (counter<5) {
             const newSuggestion = document.createElement("option");
             searchList.appendChild(newSuggestion);
