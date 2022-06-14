@@ -13,9 +13,9 @@ async function loadResults(){
     let datas=await serverResponse.json();
     console.log(datas);
 
-    datas.forEach(element => {
-        keywords.push(element.key);
-        proverbs.push(element.sozum);
+    datas.forEach(elemen => {
+        keywords.push(elemen.anahtar);
+        proverbs.push(elemen.sozum);
     });
     
     const unitedWords = [...new Set(keywords)];
@@ -23,11 +23,11 @@ async function loadResults(){
 
     unitedWords.sort(() => Math.random() -0.5)
     let counter = 0;
-    unitedWords.forEach(element => {
+    unitedWords.forEach(elemen => {
         if (counter<5) {
             const newSuggestion = document.createElement("option");
             searchList.appendChild(newSuggestion);
-            newSuggestion.value = element;
+            newSuggestion.value = elemen;
         }
 
         counter++;
